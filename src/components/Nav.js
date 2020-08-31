@@ -15,7 +15,7 @@ const logout = () => {
     return(
         <div>
             <h1>Nav</h1>
-            <img src='https://www.raisingcanes.com/sites/default/files/logo_raising_cane.png' alt='raising canes logo'/> 
+         <a href='/'><img src='https://www.raisingcanes.com/sites/default/files/logo_raising_cane.png' alt='raising canes logo'/></a>
             <ul>
                 <li><Link to='/'>HOME</Link></li>
                 <li><Link to='/menu'>MENU</Link></li>
