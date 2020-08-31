@@ -37,7 +37,7 @@ app.post('/auth/login', authCtrl.login)
 app.post('/auth/logout', authCtrl.logout)
 
 // menu endpoints
-app.get('/api/products', menuCtrl.getMenu)
+app.get('/api/menu', menuCtrl.getMenu)
 // app.post('/api/products', menuCtrl.addMenu)
 
 //cart endpoints
