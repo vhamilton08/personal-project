@@ -1,28 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
-import axios from 'axios'
 import {Link} from 'react-router-dom'
-
+import {logoutUser} from '../redux/userReducer'
+import './Nav.css'
 const Nav = (props) => {
+    const {isLoggedIn} = props.userReducer
 
-const logout = () => {
-    axios.post('/auth/logout')
-    .then(res => {
-        props.history.push('/')
-    })
-}
+
+console.log(props)
     return(
         <div>
             <h1>Nav</h1>
          <a href='/'><img src='https://www.raisingcanes.com/sites/default/files/logo_raising_cane.png' alt='raising canes logo'/></a>
+         {isLoggedIn ? 
             <ul>
                 <li><Link to='/'>HOME</Link></li>
                 <li><Link to='/menu'>MENU</Link></li>
                 <li><Link to='/about'>ABOUT US</Link></li>
-                <li onClick={logout}><Link to='/'>Logout</Link></li>
-            </ul>
+                <li><Link to='/cart'>Cart</Link></li>
+                <li onClick={props.logoutUser}><Link to='/'>Logout</Link></li>
+            </ul> :
+                <ul>
+                <li><Link to='/'>HOME</Link></li>
+                <li><Link to='/about'>ABOUT US</Link></li>
+                <li><Link to='/auth'>Login</Link></li>
+                <li><Link to='/auth'>Sign Up</Link></li>
+            </ul>}
+
         </div>
-    )
+        )
 }
-export default withRouter(Nav)
+const mapStateToProps = reduxState => reduxState
+export default connect(mapStateToProps, {logoutUser})(withRouter(Nav))
