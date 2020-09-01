@@ -1,8 +1,8 @@
 import React from 'react';
-import './App.css';
 import routes from './routes'
 import Nav from './components/Nav'
 import {withRouter} from 'react-router-dom'
+// import './components/Nav.css'
 
 function App(props) {
   return(
@@ -11,6 +11,7 @@ function App(props) {
         <Nav/> : null}
         {routes}
       </div>
+      
 
   )
 }
