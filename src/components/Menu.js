@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Product from './Product'
+import './Menu.scss'
 
 const Menu = (props) => {
     const [menu, setMenu] = useState([])
@@ -14,16 +15,18 @@ const Menu = (props) => {
 
     console.log(menu)
     return(
-        <div>
-            <h1>This is the menu page</h1>
+        <div className='menucontainer'>
+            <div className='food'>
+
             {menu.map((el, index, array) => {
                 return (
                     <Product
                     key={index}
                     element={el}/>
-
-                )
-            })}
+                    
+                    )
+                })}
+                </div>
         </div>
     )
 }
