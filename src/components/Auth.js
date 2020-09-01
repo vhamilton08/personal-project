@@ -3,6 +3,7 @@ import axios from 'axios'
 import {getUser} from '../redux/userReducer'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
+import './Auth.scss'
 
 const Auth = (props) => {
     const [usernameInput, setUsernameInput] = useState('')
@@ -35,7 +36,7 @@ const Auth = (props) => {
         }).catch(err => console.log('please enter a valid username or password'))
     }
     return(
-        <div>
+        <div className='auth'>
             <img src='https://www.raisingcanes.com/sites/default/files/logo_raising_cane.png' alt='raising-canes logo'/>
             <h1><Link to='/'>HOME</Link></h1>
             <h1>{toggle ? "Login" : "Register"}</h1>
