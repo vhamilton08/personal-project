@@ -36,31 +36,44 @@ const Auth = (props) => {
         }).catch(err => console.log('please enter a valid username or password'))
     }
     return(
-        <div className='auth'>
+        <div>
+            <header>
+
             <img src='https://www.raisingcanes.com/sites/default/files/logo_raising_cane.png' alt='raising-canes logo'/>
             <h1><Link to='/'>HOME</Link></h1>
+            </header>
+        <div className='auth'>
+
             <h1>{toggle ? "Login" : "Register"}</h1>
-            <form>
+            <form className='authform'>
                 <input name='username' placeholder='username' value={usernameInput} onChange={usernameInputHandle}/>
                 <input name='password' placeholder='password' value={passwordInput} onChange={passwordInputHandle}/>
             </form>
             {toggle ? (
-                <>
-                <button onClick={login}>Login</button>
-                <button onClick={() => {
+                // <>
+                <div className='buttoncontainer'>
+
+                <button className='loginbutton' onClick={login}>Login</button>
+                <button className='switchbutton' onClick={() => {
                     setToggle(!toggle)
                 }}>Need to Signup?</button>
-                </>
-            ) : (
-                <>
-                <button onClick={register}>Register</button>
-                <button onClick={() => {
+                </div>
+                // </>
+                ) : (
+                    // <>
+                    <div className='buttoncontainer'>
+
+                <button className='loginbutton' onClick={register}>Register</button>
+                <button className='switchbutton' onClick={() => {
                     setToggle(!toggle)
                 }}
                 >already have an account?</button>
-                </>
-            )}
+                </div>
+                // </>
+                )}
+            
         </div>
+            </div>
     )
 }
 

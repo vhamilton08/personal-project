@@ -1,3 +1,25 @@
+// @import './_variables';
+header{
+    height: 0vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+    h1{
+        padding-right: 5%;
+        
+        a{
+            text-decoration: none;
+            color: black ;
+        }
+    }
+    img{
+        width: 150px;
+        height: 100px;
+        padding-left: 5%;
+    }
+}
 .auth {
     width: 100vw;
     height: 100vh;
@@ -8,3 +30,51 @@
     background-image: url(https://raster-static.postmates.com/?url=com.postmates.img.prod.s3.amazonaws.com/b657a2f8-9549-45fa-a0c7-6826f23ef6bd/orig.jpg&quality=90&w=1500&h=900&mode=crop&format=jpg&v=4);
     background-size: cover;
 }
+
+img {
+    display: flex;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+.authform {
+    height: 60px;
+    // background-color: blue;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: space-around;
+}
+.buttoncontainer {
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+    width: 200px;
+    align-items: center;
+   justify-content: space-around;
+//    background-color: yellow;
+   
+
+    .loginbutton {
+        color: white;
+        background-color: #cf1b39;
+        height: 35px;
+        width: 125px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .switchbutton {
+        background: none;
+        border: none;
+        font-size: 18px;
+        outline: none;
+    }
+}
+
+// @media (max-width: 768px) {
+//     .auth {
+//         background-size: cover;
+//     }
+// }
