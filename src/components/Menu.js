@@ -23,9 +23,9 @@ const Menu = (props) => {
                     <Product
                     key={index}
                     element={el}/>
-                    
                     )
                 })}
+              
                 </div>
         </div>
     )

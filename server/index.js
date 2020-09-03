@@ -6,6 +6,8 @@ const {SESSION_SECRET, CONNECTION_STRING, SERVER_PORT} = process.env
 const authCtrl = require('./controllers/authController')
 const cartCtrl = require('./controllers/cartController')
 const menuCtrl = require('./controllers/menuController')
+const stripe = require('stripe')('pk_test_51HN3d6GO8vgBR7X5Rt5nMmQKjOtPuTKSAIYgaUmgnHthf061PXYw3bpj2pqoLadORjC3vPgZVeOostsgWMnP1psh00XlnTiDgQ')
+
 
 const app = express()
 
@@ -29,6 +31,17 @@ massive({
     app.set('db', db)
     console.log('Db is online')
 }).catch(err => console.log(`Database error: ${err}`))
+
+app.post('/create-payment-intent', async (req, res) => {
+    const {items} = req.body
+    const paymentIntent = await stripe.paymentIntent.create({
+        amount: calculateOrderAmount(items),
+        currency: 'usd'
+    })
+    res.send({
+        clientSecret: paymentIntent.client_secret
+    })
+})
 
 //auth endpoints
 app.get('/auth/user', authCtrl.getUser)

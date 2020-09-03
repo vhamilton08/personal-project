@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Product.scss'
+import axios from 'axios'
 
 const Product = (props) => {
     console.log(props)
+useEffect(() => {
+    axios.post('/api/cart/:id',)
+})
+
     return (
 <div className='product'>
 
