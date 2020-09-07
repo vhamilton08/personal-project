@@ -2,15 +2,15 @@ body {
     margin: 0;
     padding: 0;
 }
-.container {
+  /* .container {
     position: relative;
     width: 1200px;
     height: 300px;
     margin: 50px auto;
     background: blue;
 
-}
-.container .box {
+}  
+ .container .box {
     position: relative;
     width: calc(400px - 30px);
     height: calc(300px - 30px);
@@ -21,7 +21,7 @@ body {
     overflow: hidden;
     /* border-radius: 50%; */
 
-}
+/* }
 
 .container .box .icon {
     position: absolute;
@@ -40,5 +40,43 @@ body {
     height: 80px;
     border-radius: 50%;
     background: cornflowerblue;
+
+}  */
+
+.card {
+    width: 200px;
+    height: 100%;
+    
+}
+.card:hover .card-content {
+    transform: rotateY(.5turn);
+}
+.card-content{
+    text-align: center;
+    position: relative;
+    padding: 10em;
+    transition: transform 3s;
+    /* background: chartreuse; */
+    transform-style: preserve-3d;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2em;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+
+}
+.card-front {
+    /* transform: rotateY(.25turn); */
+    background-size: cover;
+}
+.card-back  {
+    transform: rotateY(.5turn);
+    background-color: crimson;
 
 }
