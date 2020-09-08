@@ -1,13 +1,12 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './Product.scss'
-import axios from 'axios'
+import {connect} from 'react-redux'
+import {addToCart} from '../redux/cartReducer'
 
 const Product = (props) => {
-    console.log(props)
-useEffect(() => {
-    axios.post('/api/cart/:id',)
-})
 
+
+console.log(props)
     return (
 <div className='product'>
 
@@ -19,11 +18,11 @@ useEffect(() => {
 
             <h2>{props.element.name}</h2>
             <h3>${props.element.price}</h3>
-            <button className='cartbutton'>Add to Cart</button>
+            <button onClick={() => props.addToCart(props.element.menu_id)} className='cartbutton'>Add to Cart</button>
         </div>
 </div>
 
     )
 }
 
-export default Product
+export default connect(null, {addToCart})(Product)

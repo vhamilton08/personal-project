@@ -55,7 +55,7 @@ app.get('/api/menu', menuCtrl.getMenu)
 
 //cart endpoints
 app.get('/api/cart', cartCtrl.getCart)
-app.post('/api/cart/:id', cartCtrl.addToCart)
+app.post('/api/cart', cartCtrl.addToCart)
 app.delete('/api/cart/:id', cartCtrl.deleteFromCart)
 app.put('/api/cart/:id', cartCtrl.editCart)
 
