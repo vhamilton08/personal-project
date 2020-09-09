@@ -29,8 +29,29 @@ export function addToCart(menu_id) {
     return {
         type: ADD_TO_CART,
         payload: add
-            // menu_id,
-            // quantity: 1
+        
+    }
+}
+
+export function deleteItem(menu_id){
+    const deleteItem = axios.delete('/api/cart', {menu_id})
+    .then(res => res.data)
+    .catch(err => console.log(err))
+
+    return {
+        type: DELETE_FROM_CART,
+        payload: deleteItem
+    }
+}
+
+export function editCart() {
+    const edit = axios.push('/api/cart/:id')
+    .then(res => res.data)
+    .catch(err => console.log(err))
+
+    return {
+        type: EDIT_QUANTITY,
+        payload: edit
     }
 }
 
@@ -51,7 +72,12 @@ export default  function cartReducer(state = initialState, action) {
             return state;
         case ADD_TO_CART + "_FULFILLED":
             return {...state, cart: payload, add:payload};
-        default:
+            
+         case DELETE_FROM_CART + "_REJECTED":
+                return state;
+         case DELETE_FROM_CART + "_FULFILLED":
+            return {...state, cart: payload, deleteItem: payload};
+         default:
             return state;
     }
 }

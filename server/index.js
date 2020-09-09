@@ -9,6 +9,8 @@ const menuCtrl = require('./controllers/menuController')
 const stripe = require('stripe')('pk_test_51HN3d6GO8vgBR7X5Rt5nMmQKjOtPuTKSAIYgaUmgnHthf061PXYw3bpj2pqoLadORjC3vPgZVeOostsgWMnP1psh00XlnTiDgQ')
 
 
+
+
 const app = express()
 
 app.use(express.json())
@@ -43,6 +45,7 @@ app.post('/create-payment-intent', async (req, res) => {
     })
 })
 
+
 //auth endpoints
 app.get('/auth/user', authCtrl.getUser)
 app.post('/auth/register', authCtrl.register)
@@ -56,7 +59,7 @@ app.get('/api/menu', menuCtrl.getMenu)
 //cart endpoints
 app.get('/api/cart', cartCtrl.getCart)
 app.post('/api/cart', cartCtrl.addToCart)
-app.delete('/api/cart/:id', cartCtrl.deleteFromCart)
-app.put('/api/cart/:id', cartCtrl.editCart)
+app.delete('/api/cart', cartCtrl.deleteFromCart)
+app.put('/api/cart/', cartCtrl.editCart)
 
 app.listen(SERVER_PORT, () => console.log(`<-----Server Online----->`))

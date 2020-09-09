@@ -83,7 +83,8 @@ body {
 }
 .card-back  {
     transform: rotateY(.5turn);
-    background-color: crimson;
+    background-color: white;
+    ;
 
 }
 .item {
