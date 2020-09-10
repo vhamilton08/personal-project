@@ -42,12 +42,12 @@ body {
     background: cornflowerblue;
 
 }  */
-
 .card {
     width: 200px;
     height: 200px;
   display: flex;
-  align-content: center;
+  align-content: center;margin-right: 150px;
+  
 
     
 }
@@ -58,7 +58,7 @@ body {
     text-align: center;
     position: relative;
     padding: 10em;
-    transition: transform 3s;
+    transition: transform 2s;
     /* background: chartreuse; */
     transform-style: preserve-3d;
 
@@ -99,4 +99,7 @@ body {
     background-color: crimson;
     align-items: center;
     /* padding: 20px; */
+}
+h1 {
+    color: red;
 }
