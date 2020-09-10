@@ -1,4 +1,4 @@
-
+@import '../styles/variables';
 .header{
     width: 100vw;
     height: 15vh;
@@ -34,4 +34,23 @@ ul {
     margin: 0%;
     height: 100px;
     display: flex;
+}
+@media (max-width: 768px) {
+   .navbar {
+       width: 768px;
+   }
+   ul {
+      margin-right: 30px;
+      li {
+          font-size: 20px;
+          a { 
+              
+              margin-right: 20px;
+              
+          }
+      }
+   }
+   .logo{
+       width: 125px;
+   }
 }

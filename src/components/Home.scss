@@ -4,3 +4,14 @@
     background-image: url(https://www.raisingcanes.com/sites/default/files/CraveableQuality_WebsiteSlider.jpg);
     background-size: cover;
 }
+@media (max-width: 768px) {
+    .homepage {
+        background-size: cover;
+        background-position: center;
+        background-size: 768px;
+        background-repeat: no-repeat;
+        background-position-y: top;
+       background-color: red;
+    //    height: 100vh;
+    }
+}

@@ -73,8 +73,9 @@ img {
     }
 }
 
-// @media (max-width: 768px) {
-//     .auth {
-//         background-size: cover;
-//     }
-// }
+@media (max-width: 768px) {
+    .auth {
+        background-size: cover;
+        background-position: center;
+    }
+}
