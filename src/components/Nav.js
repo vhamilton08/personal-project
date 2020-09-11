@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import {Link} from 'react-router-dom'
@@ -7,7 +7,11 @@ import './Nav.scss'
 
 const Nav = (props) => {
     const {isLoggedIn} = props.userReducer
+const [dropDownVisible, setDropDownVisible] = useState(false)
 
+const toggleDropdown = () => {
+    setDropDownVisible = !dropDownVisible
+}
 
 console.log(props)
     return(

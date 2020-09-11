@@ -40,6 +40,7 @@ module.exports = {
         if(authenticated) {
         delete foundUser.password
         req.session.user = foundUser
+        console.log(req.session.user)
         res.status(202).send(foundUser)
             } else {
                 res.status(401).send('Incorrect username or password')

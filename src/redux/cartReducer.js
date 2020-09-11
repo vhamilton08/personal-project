@@ -34,9 +34,8 @@ export function addToCart(menu_id) {
 }
 
 export function deleteItem(menu_id){
-    const deleteItem = axios.delete('/api/cart', {menu_id})
-    .then(res => res.data)
-    .catch(err => console.log(err))
+    const deleteItem = axios.delete(`/api/cart/${menu_id}`)
+  console.log("RESPONSE", deleteItem)
 
     return {
         type: DELETE_FROM_CART,
@@ -44,10 +43,8 @@ export function deleteItem(menu_id){
     }
 }
 
-export function editCart() {
-    const edit = axios.push('/api/cart/:id')
-    .then(res => res.data)
-    .catch(err => console.log(err))
+export function editQuantity(edit) {
+    
 
     return {
         type: EDIT_QUANTITY,
@@ -72,11 +69,19 @@ export default  function cartReducer(state = initialState, action) {
             return state;
         case ADD_TO_CART + "_FULFILLED":
             return {...state, cart: payload, add:payload};
+        case ADD_TO_CART + "_PENDING":
+            return state;
             
          case DELETE_FROM_CART + "_REJECTED":
                 return state;
          case DELETE_FROM_CART + "_FULFILLED":
-            return {...state, cart: payload, deleteItem: payload};
+            return {...state, cart: payload.data};
+        case DELETE_FROM_CART + "_PENDING":
+            return state;
+
+    
+        case EDIT_QUANTITY:
+            return {...state, cart: payload};
          default:
             return state;
     }

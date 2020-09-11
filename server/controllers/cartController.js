@@ -39,24 +39,27 @@ module.exports = {
     
     deleteFromCart: async (req, res) => {
         const {user_id} = req.session.user
-        const { menu_id } = req.body
+        const { menu_id } = req.params
         const db = req.app.get('db')
         const cart = await db.cart.delete_from_cart([user_id, menu_id])
        return res.status(200).send(cart)
     },
     
-    deleteCart: async (req, res) => {
-        const {id} =req.params
-        const db = req.app.get('db')
-        const cart = await db.cart.delete_cart([id])
-        res.status(200).send(cart)
-    },
+    // deleteCart: async (req, res) => {
+    //     const {id} =req.params
+    //     const db = req.app.get('db')
+    //     const cart = await db.cart.delete_cart([id])
+    //     res.status(200).send(cart)
+    // },
     
     editCart: async (req, res) => {
+      const {menu_id} = req.params
     const {quantity} = req.body
-    // const {id} = req.params
+    const {user_id} = req.session.user
+  
     const db = req.app.get('db')
-    const cart = await db.cart.edit_quantity(quantity)
+    const cart = await db.cart.edit_quantity([quantity, menu_id, user_id])
+    console.log(cart)
     res.status(200).send(cart)
     }
     

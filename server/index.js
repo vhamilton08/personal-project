@@ -59,7 +59,7 @@ app.get('/api/menu', menuCtrl.getMenu)
 //cart endpoints
 app.get('/api/cart', cartCtrl.getCart)
 app.post('/api/cart', cartCtrl.addToCart)
-app.delete('/api/cart', cartCtrl.deleteFromCart)
-app.put('/api/cart/', cartCtrl.editCart)
+app.delete('/api/cart/:menu_id' , cartCtrl.deleteFromCart)
+app.put('/api/cart/:menu_id', cartCtrl.editCart)
 
 app.listen(SERVER_PORT, () => console.log(`<-----Server Online----->`))
