@@ -47,7 +47,7 @@ const Auth = (props) => {
             <h1>{toggle ? "Login" : "Register"}</h1>
             <form className='authform'>
                 <input name='username' placeholder='username' value={usernameInput} onChange={usernameInputHandle}/>
-                <input name='password' placeholder='password' value={passwordInput} onChange={passwordInputHandle}/>
+                <input name='password' placeholder='password' type='password' value={passwordInput} onChange={passwordInputHandle}/>
             </form>
             {toggle ? (
                 // <>

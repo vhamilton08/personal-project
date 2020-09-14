@@ -17,11 +17,26 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    background-color: red;
-    align-content: center;
+    background-color: crimson;
+    align-content: space-around;
+}
+@media(max-width: 1024px) {
+    .food {
+        display: inline;
+        padding-top: 25px;
+    }
 }
 @media (max-width: 768px) {
     .food {
+        display: block;
         
+        
+       
+    }
+}
+
+@media (max-width: 500px) {
+    .food {
+        padding-top: 15px;
     }
 }

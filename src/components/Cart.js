@@ -8,9 +8,14 @@ import StripeCheckout from 'react-stripe-checkout'
 import axios from 'axios'
 
 const Cart = (props) => {
-//    const {quantity, setQuantity} = useState()
-// const onToken = (token) => {
-// token.card = void 0
+   const {quantity, setQuantity} = useState()
+const onToken = (token) => {
+fetch('/save-stripe-token', {method: "POST", body: JSON.stringify(token),
+}).then(response => {
+    response.json().then(data => {
+        alert(`We are in business`)
+    })
+})}
 // axios.post('/api/payment', {token, amount: 100})
 // .then(res => {
 //     alert('Payment accepted')
@@ -20,17 +25,21 @@ const [input, setInput] = useState({
     quantity: props.cartReducer.cart.quantity
 })
 
+
 const handleChange = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
   }
 
   
 const editQuantity = (menu_id, quantity) => {
+    console.log("ALERT")
     axios.put(`/api/cart/${menu_id}`, {quantity})
     .then(res => {
         setInput(res.data)
         props.editQuantity(res.data)
+        console.log("RES", res)
     }).catch(err => console.log(err))
+    
 }
 
 
@@ -62,9 +71,10 @@ return(
 
                     <img src={menu.image} alt="product"/>
                     <h2>{menu.name}</h2>
-                    <small>${input.quantity * menu.price}</small>
-                    {/* <h3>quantity{input.quantity}</h3> */}
-                    <input name='quantity' value={input.quantity} onChange={handleChange} onKeyPress={() => editQuantity(menu.menu_id, input.quantity)} type='number'/>
+                    <small>${menu.quantity * menu.price}</small>
+                    <h3>quantity{menu.quantity}</h3>
+                    {/* <input name='quantity' placeholder={menu.quantity} onChange={handleChange} type='number'/>
+                    <button onClick={() => editQuantity(menu.quantity)}>update</button> */}
                     <button onClick={() => props.deleteItem(menu.menu_id)}>REMOVE</button>
                         </div>
                     </div>
@@ -72,17 +82,18 @@ return(
                 })}
         <div className="summary">
             
-            <h2>total</h2>
            
-         ${props.cartReducer.cart.reduce((acc, cur) => {
+            <h2>total</h2>
+        <h2>${props.cartReducer.cart.reduce((acc, cur) => {
            return (acc += +cur.price)
-        }, 0)}
+        }, 0)}</h2>
         </div>
-            {/* <StripeCheckout
+            <StripeCheckout className="stripe"
             token={onToken}
             stripeKey={'pk_test_51HN3d6GO8vgBR7X5Rt5nMmQKjOtPuTKSAIYgaUmgnHthf061PXYw3bpj2pqoLadORjC3vPgZVeOostsgWMnP1psh00XlnTiDgQ'}
-            amount={1000}
-            /> */}
+            amount={+props.cartReducer.cart.acc}
+          
+            />
         </div>
     )
 }

@@ -3,21 +3,27 @@ header{
     height: 0vh;
     width: 100vw;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: row;
+   
 
     h1{
         padding-right: 5%;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: -70px;
         
         a{
             text-decoration: none;
             color: black ;
+            font-size: 40px;
         }
     }
     img{
         width: 150px;
         height: 100px;
         padding-left: 5%;
+        ;
     }
 }
 .auth {
@@ -29,13 +35,19 @@ header{
     flex-direction: column;
     background-image: url(https://raster-static.postmates.com/?url=com.postmates.img.prod.s3.amazonaws.com/b657a2f8-9549-45fa-a0c7-6826f23ef6bd/orig.jpg&quality=90&w=1500&h=900&mode=crop&format=jpg&v=4);
     background-size: cover;
+    h1{
+        font-size: 30px;
+    }
+    // background-repeat: no-repeat;
+//     background-attachment: initial;
+// background-position: center top;
 }
 
-img {
-    display: flex;
-    align-content: flex-start;
-    align-items: flex-start;
-}
+// img {
+//     display: flex;
+//     align-content: flex-start;
+//     align-items: flex-start;
+// }
 
 .authform {
     height: 60px;
@@ -77,5 +89,32 @@ img {
     .auth {
         background-size: cover;
         background-position: center;
+    }
+
+    header {
+        h1 {
+            margin-right: 20px;
+        }
+        img {
+            width: 120px;
+            height: 90px;
+            margin-left: 10px;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    header {
+        h1 {
+            a {
+                color: white;;
+            }
+        }
+    }
+    .auth {
+        background-size: 850px;
+        background-repeat: no-repeat;
+        // height: 100vh;
+        background-color: black;
     }
 }

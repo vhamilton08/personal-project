@@ -5,14 +5,18 @@ const About = () => {
     return(
 
         <div>
+            <div className="about-text">
+
             <h1>OUR STORY</h1>
             <h3>The road to Raising Cane's has been an incredible entreprenuerial adventure.</h3>
             <p>Our Founder, Todd Graves(Founder, CEO, Fry Cook, Cashier) took a few pictures along the way.
-                Flip through and find out what it took to bring his dream to of Raising Cane's to reality.</p>
+                Flip through and find out what it took to bring his dream of Raising Cane's to reality.</p>
+            </div>
                 <div className="item">
                 <div className="card">
                     <div className="card-content">
                     <div className="card-front">
+            <h1>1</h1>
                         <img alt='first' src='https://www.raisingcanes.com/sites/default/files/flip/flip001.png'/>
                     </div>
                     <div className="card-back">
@@ -25,6 +29,7 @@ const About = () => {
                 <div className="card">
                     <div className="card-content">
                     <div className="card-front">
+                        <h1>2</h1>
                         <img alt='first' src='https://www.raisingcanes.com/sites/default/files/flip/flip002.png'/>
                     </div>
                     <div className="card-back">
@@ -37,6 +42,7 @@ const About = () => {
                 <div className="card">
                     <div className="card-content">
                     <div className="card-front">
+                        <h1>3</h1>
                         <img alt='first' src='https://www.raisingcanes.com/sites/default/files/flip/flip003.png'/>
                     </div>
                     <div className="card-back">
@@ -49,6 +55,7 @@ const About = () => {
                 <div className="card">
                     <div className="card-content">
                     <div className="card-front">
+                        <h1>4</h1>
                         <img alt='first' src='https://www.raisingcanes.com/sites/default/files/flip/flip004.png'/>
                     </div>
                     <div className="card-back">
@@ -61,30 +68,33 @@ const About = () => {
                 <div className="card">
                     <div className="card-content">
                     <div className="card-front">
+                        <h1>5</h1>
                         <img alt='first' src='https://www.raisingcanes.com/sites/default/files/flip/flip005.png'/>
                     </div>
                     <div className="card-back">
 
                         <h1>RENOVATE</h1>
-                        <p>The first Raising Cane’s®, “The Mothership”, was an old building I renovated myself with help at the entrance of LSU.</p>
+                        <p>The first Raising Cane’s®, “The Mothership”, was an old building I renovated myself with help at the entrance of LSU.</p>
                     </div>
                     </div>
                 </div>
                 <div className="card">
                     <div className="card-content">
                     <div className="card-front">
+                        <h1>6</h1>
                         <img alt='first' src='https://www.raisingcanes.com/sites/default/files/flip/flip006.png'/>
                     </div>
                     <div className="card-back">
 
                         <h1>THE MURAL</h1>
-                        <p>During the renovation, we found an old mural on the original brick wall that inspired the design of our Raising Cane’s® logo.</p>
+                        <p>During the renovation, we found an old mural on the original brick wall that inspired the design of our Raising Cane’s® logo.</p>
                     </div>
                     </div>
                 </div>
                 <div className="card">
                     <div className="card-content">
                     <div className="card-front">
+                        <h1>7</h1>
                         <img alt='first' src='https://www.raisingcanes.com/sites/default/files/flip/flip007.png'/>
                     </div>
                     <div className="card-back">
@@ -97,12 +107,13 @@ const About = () => {
                 <div className="card">
                     <div className="card-content">
                     <div className="card-front">
+                        <h1>8</h1>
                         <img alt='first' src='https://www.raisingcanes.com/sites/default/files/flip/flip008.png'/>
                     </div>
                     <div className="card-back">
 
                         <h1>SUCCESS</h1>
-                        <p>Thank you to everyone who believed in the vision of Raising Cane’s® - to make the highest quality chicken finger meals anywhere.</p>
+                        <p>Thank you to everyone who believed in the vision of Raising Cane’s® - to make the highest quality chicken finger meals anywhere.</p>
                     </div>
                     </div>
                 </div>

@@ -7,6 +7,8 @@ const authCtrl = require('./controllers/authController')
 const cartCtrl = require('./controllers/cartController')
 const menuCtrl = require('./controllers/menuController')
 const stripe = require('stripe')('pk_test_51HN3d6GO8vgBR7X5Rt5nMmQKjOtPuTKSAIYgaUmgnHthf061PXYw3bpj2pqoLadORjC3vPgZVeOostsgWMnP1psh00XlnTiDgQ')
+const aws = require('aws-sdk')
+
 
 
 

@@ -1,17 +1,31 @@
 .homepage {
     height: 85vh;
-    width: 100vw;
+    width: 100%;
     background-image: url(https://www.raisingcanes.com/sites/default/files/CraveableQuality_WebsiteSlider.jpg);
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-position: center;
+    object-fit: cover;
 }
 @media (max-width: 768px) {
     .homepage {
-        background-size: cover;
+        background-size: contain;
         background-position: center;
-        background-size: 768px;
+        background-size: 100%;
         background-repeat: no-repeat;
         background-position-y: top;
-       background-color: red;
+       background-color: black;
     //    height: 100vh;
+    object-fit: cover;
+    }
+}
+
+@media (max-width: 500px) {
+    .homepage {
+        background-color: black;
+        width: 500px;
+        background-size: contain;
+        // object-fit: fill;
     }
 }
